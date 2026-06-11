@@ -1330,20 +1330,20 @@ a {
   }
 }
 /* =========================
-   Mobile final small fixes
-   عداد فوق + المربعات تحته + رفع كلمات الأزرار
+   PHONE ONLY FIXES
+   لا يؤثر على الكمبيوتر
 ========================= */
 
-@media (max-width: 768px) {
-  /* نخلي اللوحة تبدأ تحت العداد بدل ما المربعات تدخل تحته */
+@media (max-width: 768px) and (hover: none) and (pointer: coarse) {
+  /* نخلي مساحة المربعات تبدأ تحت العداد */
   .boardSection {
-    top: 112px !important;
+    top: 108px !important;
     right: 8px !important;
     left: 8px !important;
     bottom: 8px !important;
   }
 
-  /* تصغير العداد شوي حتى ما ياخذ مساحة كبيرة */
+  /* العداد يضل فوق وصغير */
   .mobileTopCounter {
     top: 10px !important;
     right: 14px !important;
@@ -1367,14 +1367,14 @@ a {
     height: 6px !important;
   }
 
-  /* رفع شريط الزوم شوي حتى يضل فوق أزرار الأسفل */
+  /* شريط الزوم يكون فوق أزرار الأسفل */
   .boardHeader {
-    bottom: calc(88px + env(safe-area-inset-bottom, 0px)) !important;
+    bottom: calc(86px + env(safe-area-inset-bottom, 0px)) !important;
   }
 
-  /* تحسين أزرار الأسفل */
+  /* أزرار الأسفل نفسها */
   .mobileBottomDock {
-    bottom: calc(14px + env(safe-area-inset-bottom, 0px)) !important;
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px)) !important;
     padding: 6px !important;
     gap: 6px !important;
     border-radius: 22px !important;
@@ -1382,26 +1382,26 @@ a {
 
   .mobileBottomDock button,
   .mobileBottomDock a {
-    height: 48px !important;
+    height: 50px !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 2px !important;
-    padding: 4px 2px 6px !important;
+    gap: 1px !important;
+    padding: 4px 2px 5px !important;
     line-height: 1 !important;
-  }
-
-  .mobileBottomDock span {
-    display: block !important;
-    font-size: 9px !important;
-    line-height: 1.15 !important;
-    margin: 0 !important;
-    transform: translateY(-2px) !important;
   }
 
   .mobileBottomDock button,
   .mobileBottomDock a {
     font-size: 17px !important;
+  }
+
+  .mobileBottomDock span {
+    display: block !important;
+    font-size: 9px !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+    transform: translateY(-3px) !important;
   }
 }
