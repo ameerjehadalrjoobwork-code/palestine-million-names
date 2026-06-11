@@ -1689,4 +1689,15 @@ a {
   .mobileBoardHeader .toolbar {
     display: flex !important;
   }
+}/* تعديل بسيط لمسافة الكلام داخل أزرار الجوال */
+@media (max-width: 768px) and (hover: none) and (pointer: coarse) {
+  .mobileBottomDock button,
+  .mobileBottomDock a {
+    gap: 4px !important;
+  }
+
+  .mobileBottomDock span {
+    margin-top: 3px !important;
+    transform: translateY(2px) !important;
+  }
 }
