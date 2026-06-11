@@ -1329,3 +1329,79 @@ a {
     grid-template-columns: 1fr;
   }
 }
+/* =========================
+   Mobile final small fixes
+   عداد فوق + المربعات تحته + رفع كلمات الأزرار
+========================= */
+
+@media (max-width: 768px) {
+  /* نخلي اللوحة تبدأ تحت العداد بدل ما المربعات تدخل تحته */
+  .boardSection {
+    top: 112px !important;
+    right: 8px !important;
+    left: 8px !important;
+    bottom: 8px !important;
+  }
+
+  /* تصغير العداد شوي حتى ما ياخذ مساحة كبيرة */
+  .mobileTopCounter {
+    top: 10px !important;
+    right: 14px !important;
+    left: 14px !important;
+    padding: 8px 12px !important;
+    gap: 4px !important;
+    border-radius: 18px !important;
+  }
+
+  .mobileTopCounter span {
+    font-size: 10px !important;
+    line-height: 1.1 !important;
+  }
+
+  .mobileTopCounter strong {
+    font-size: 14px !important;
+    line-height: 1.1 !important;
+  }
+
+  .mobileTopCounter div {
+    height: 6px !important;
+  }
+
+  /* رفع شريط الزوم شوي حتى يضل فوق أزرار الأسفل */
+  .boardHeader {
+    bottom: calc(88px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+
+  /* تحسين أزرار الأسفل */
+  .mobileBottomDock {
+    bottom: calc(14px + env(safe-area-inset-bottom, 0px)) !important;
+    padding: 6px !important;
+    gap: 6px !important;
+    border-radius: 22px !important;
+  }
+
+  .mobileBottomDock button,
+  .mobileBottomDock a {
+    height: 48px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 2px !important;
+    padding: 4px 2px 6px !important;
+    line-height: 1 !important;
+  }
+
+  .mobileBottomDock span {
+    display: block !important;
+    font-size: 9px !important;
+    line-height: 1.15 !important;
+    margin: 0 !important;
+    transform: translateY(-2px) !important;
+  }
+
+  .mobileBottomDock button,
+  .mobileBottomDock a {
+    font-size: 17px !important;
+  }
+}
