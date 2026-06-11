@@ -1260,4 +1260,264 @@ button {
 .pendingBtn {
   background: #f59e0b;
   color: #111;
+}.millionProgressCard {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #ffffff, #faf7ef);
+  border: 1px solid #e7dfd3;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.06);
+}
+
+.progressTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.progressTop span {
+  color: #4b5563;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.progressTop strong {
+  color: #111827;
+  font-size: 20px;
+  font-weight: 950;
+  direction: ltr;
+  white-space: nowrap;
+}
+
+.progressTrack {
+  width: 100%;
+  height: 14px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #eee7dc;
+  border: 1px solid #ded6c8;
+}
+
+.progressFill {
+  height: 100%;
+  min-width: 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #166534, #22c55e, #84cc16);
+  transition: width 0.5s ease;
+}
+
+.millionProgressCard p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.priceGoldCard {
+  display: grid;
+  gap: 8px;
+  padding: 20px;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.55), transparent 35%),
+    linear-gradient(135deg, #facc15, #d97706, #92400e);
+  color: #fff;
+  border: 1px solid #facc15;
+  box-shadow: 0 18px 45px rgba(217, 119, 6, 0.25);
+}
+
+.priceGoldCard span {
+  font-size: 14px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.priceGoldCard strong {
+  font-size: 32px;
+  font-weight: 950;
+  line-height: 1;
+  color: #fffbe6;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.22);
+}/* تحسين ترتيب القائمة الجانبية */
+.sidebar {
+  gap: 16px;
+}
+
+/* كرت عداد المليون */
+.millionProgressCard {
+  padding: 16px;
+  border-radius: 24px;
+}
+
+.progressTop {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  text-align: center;
+}
+
+.progressTop span {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.progressTop strong {
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.progressTrack {
+  height: 14px;
+  margin-top: 2px;
+}
+
+.millionProgressCard p {
+  text-align: center;
+  font-size: 14px;
+}
+
+/* كرت السعر الذهبي */
+.priceGoldCard {
+  padding: 18px 16px;
+  border-radius: 24px;
+  text-align: center;
+}
+
+.priceGoldCard span {
+  font-size: 14px;
+}
+
+.priceGoldCard strong {
+  font-size: 34px;
+}
+
+/* زر الحجز */
+.primaryBtn {
+  min-height: 58px;
+  border-radius: 20px;
+  font-size: 18px;
+}
+
+/* صندوق التنقل بين الصفحات */
+.pageBox {
+  padding: 14px;
+  border-radius: 22px;
+  gap: 10px;
+}
+
+.pageBox button {
+  min-width: 86px;
+  height: 52px;
+  border-radius: 16px;
+  font-size: 15px;
+}
+
+.pageBox form {
+  min-width: 78px;
+}
+
+.pageBox form span {
+  font-size: 12px;
+}
+
+.pageInputRow {
+  gap: 4px;
+}
+
+.pageInputRow input {
+  width: 48px;
+  height: 42px;
+  border-radius: 12px;
+  font-size: 18px;
+}
+
+.pageInputRow small {
+  font-size: 14px;
+}
+
+/* البحث عن رقم مربع */
+.searchBox {
+  gap: 10px;
+}
+
+.searchBox label {
+  text-align: center;
+  font-size: 15px;
+}
+
+.searchBox div {
+  gap: 10px;
+}
+
+.searchBox input {
+  height: 52px;
+  border-radius: 16px;
+  font-size: 15px;
+}
+
+.searchBox button {
+  height: 52px;
+  border-radius: 16px;
+  min-width: 66px;
+}
+
+/* بديل صندوق حالة الاتصال */
+.sidebarBottomBox {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+  border-radius: 24px;
+  background: rgba(0, 60, 42, 0.72);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  text-align: center;
+}
+
+.sidebarBottomBox .adminLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: #00d084;
+  text-decoration: none;
+  font-weight: 950;
+  font-size: 17px;
+}
+
+.sidebarBottomBox p {
+  margin: 0;
+  color: #e8fff4;
+  font-size: 13px;
+  line-height: 1.8;
+  font-weight: 700;
+}
+
+/* تحسين للشاشات الضيقة */
+@media (max-width: 520px) {
+  .sidebar {
+    padding: 24px 26px;
+  }
+
+  .brand h1 {
+    font-size: 28px;
+  }
+
+  .brand p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .priceGoldCard strong {
+    font-size: 32px;
+  }
+
+  .pageBox {
+    grid-template-columns: 1fr;
+  }
+
+  .pageBox button {
+    width: 100%;
+  }
 }

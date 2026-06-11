@@ -492,27 +492,32 @@ function PublicBoard() {
           </div>
         </div>
 
-        <div className="statsGrid">
-          <div className="statCard">
-            <strong>{totalApprovedCount.toLocaleString("ar")}</strong>
-            <span>موافق عليه من المليون</span>
-          </div>
+          <div className="millionProgressCard">
+  <div className="progressTop">
+    <span>عدد المربعات من المليون</span>
+    <strong>
+      {totalApprovedCount.toLocaleString("en-US")} / {TOTAL_CELLS.toLocaleString("en-US")}
+    </strong>
+  </div>
 
-          <div className="statCard">
-            <strong>{pageReservedCount.toLocaleString("ar")}</strong>
-            <span>محجوز أو ظاهر في الصفحة</span>
-          </div>
+  <div className="progressTrack">
+    <div
+      className="progressFill"
+      style={{
+        width: `${Math.min(100, (totalApprovedCount / TOTAL_CELLS) * 100)}%`,
+      }}
+    />
+  </div>
 
-          <div className="statCard">
-            <strong>{CELLS_PER_PAGE.toLocaleString("ar")}</strong>
-            <span>مربع في الصفحة</span>
-          </div>
+  <p>
+    كل مربع يتم اعتماده يضيف اسماً جديداً إلى اللوحة.
+  </p>
+</div>
 
-          <div className="statCard">
-            <strong>{PRICE}₪</strong>
-            <span>سعر المربع</span>
-          </div>
-        </div>
+<div className="priceGoldCard">
+  <span>سعر المربع</span>
+  <strong>{PRICE} شيكل</strong>
+</div>
 
         <button className="primaryBtn" onClick={reserveFirstEmpty}>
           احجز أول مربع فارغ
@@ -565,19 +570,16 @@ function PublicBoard() {
           </div>
         </form>
 
-        <div className="miniInfo">
-          <span>حالة الاتصال</span>
-          <strong>{isLoadingPage ? "جاري تحميل الصفحة..." : "Supabase متصل"}</strong>
-          <p>الدفع يتم عبر Togo، والصورة تظهر فقط بعد موافقة الإدارة.</p>
-        </div>
+        <div className="sidebarBottomBox">
+  <a className="adminLink" href="#admin">
+    دخول المدير
+  </a>
 
-        <a className="adminLink" href="#admin">
-          دخول المدير
-        </a>
-
-        <div className="tip">
-          اسحب اللوحة بالماوس. استخدم عجلة الماوس للتكبير والتصغير.
-        </div>
+  <p>
+    اسحب اللوحة بالماوس. استخدم عجلة الماوس للتكبير والتصغير.
+  </p>
+</div>
+          
       </aside>
 
       <section className="boardSection">
