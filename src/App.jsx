@@ -281,6 +281,30 @@ function compressImage(file, maxSize = 1000, quality = 0.75) {
   });
 }
 
+async function uploadImageToSupabase(file, cellId, pageNumber) {
+  const extension = getFileExtension(file);
+  const filePath = `page-${pageNumber}/cell-${cellId}-${Date.now()}.${extension}`;
+
+  const { error: uploadError } = await supabase.storage
+    .from(BUCKET_NAME)
+    .upload(filePath, file, {
+      cacheControl: "3600",
+      upsert: false,
+    });
+
+  if (uploadError) {
+    throw uploadError;
+  }
+
+  const { data } = supabase.storage.from(BUCKET_NAME).getPublicUrl(filePath);
+
+  if (!data?.publicUrl) {
+    throw new Error("لم يتم إنشاء رابط الصورة");
+  }
+
+  return data.publicUrl;
+}
+
 export default function App() {
   const [route, setRoute] = useState(window.location.hash || "");
 
@@ -489,30 +513,6 @@ function PublicBoard() {
       file,
       imagePreviewUrl,
     }));
-  }
-
-  async function uploadImageToSupabase(file, cellId, pageNumber) {
-    const extension = getFileExtension(file);
-    const filePath = `page-${pageNumber}/cell-${cellId}-${Date.now()}.${extension}`;
-
-    const { error: uploadError } = await supabase.storage
-      .from(BUCKET_NAME)
-      .upload(filePath, file, {
-        cacheControl: "3600",
-        upsert: false,
-      });
-
-    if (uploadError) {
-      throw uploadError;
-    }
-
-    const { data } = supabase.storage.from(BUCKET_NAME).getPublicUrl(filePath);
-
-    if (!data?.publicUrl) {
-      throw new Error("لم يتم إنشاء رابط الصورة");
-    }
-
-    return data.publicUrl;
   }
 
   async function confirmBuy(e) {
