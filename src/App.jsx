@@ -66,6 +66,7 @@ const TRANSLATIONS = {
     addedDate: "تاريخ الإضافة:",
     reserveSquare: "حجز مربع",
     uploadTitle: "ارفع صورتك واحجز مكانك",
+    privacyNote: "جميع بياناتك الشخصية ستكون سرية ولن تظهر على اللوحة.",
     name: "الاسم",
     city: "المدينة",
     description: "وصف قصير",
@@ -119,6 +120,7 @@ const TRANSLATIONS = {
     addedDate: "Added on:",
     reserveSquare: "Reserve square",
     uploadTitle: "Upload your photo and reserve your place",
+    privacyNote: "Your personal information will remain private and will not appear on the board.",
     name: "Name",
     city: "City",
     description: "Short description",
@@ -921,7 +923,7 @@ function PublicBoard() {
             <span className="modalBadge">{t("reserveSquare")} #{buyCell.id}</span>
 
             <h2>{t("uploadTitle")}</h2>
-
+<p className="privacyNote">{t("privacyNote")}</p>
             <input
               type="text"
               placeholder={t("name")}
