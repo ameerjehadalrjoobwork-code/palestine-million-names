@@ -7,7 +7,7 @@ const GRID_SIZE = 100;
 const CELLS_PER_PAGE = GRID_SIZE * GRID_SIZE;
 const TOTAL_PAGES = 100;
 const TOTAL_CELLS = CELLS_PER_PAGE * TOTAL_PAGES;
-const PRICE = 1;
+const PRICE = 5;
 const BUCKET_NAME = "pixel-images";
 
 const ADMIN_USERNAME = import.meta.env.VITE_ADMIN_USERNAME || "admin";
@@ -25,17 +25,17 @@ function getCurrentLanguage() {
 }
 
 function getPriceText(language = getCurrentLanguage()) {
-  return language === "en" ? "$" + PRICE : PRICE + " دولار";
+  return language === "en" ? PRICE + " NIS" : PRICE + " شيكل";
 }
 
 const TRANSLATIONS = {
   ar: {
     languageButton: "EN",
-    brandTitle: "مليون مربع عالمي",
-    brandSubtitle: "كل مربع له صاحب، صورة، قصة، ومكان ثابت على اللوحة.",
-    millionSquares: "المليون مربع",
+    brandTitle: "مليون مربع فلسطيني",
+    brandSubtitle: "كل مربع له صاحب، صورة، قصة، ومكان ثابت على اللوحة الفلسطينية.",
+    millionSquares: "المليون مربع الفلسطيني",
     counterLabel: "عدد المربعات من المليون",
-    counterText: "كل مربع يتم اعتماده يضيف اسماً جديداً إلى اللوحة.",
+    counterText: "كل مربع يتم اعتماده يضيف اسماً جديداً إلى اللوحة الفلسطينية.",
     priceLabel: "سعر المربع",
     reserveForPrice: () => "احجز مربعك بـ" + getPriceText("ar"),
     reserveShort: "حجز",
@@ -61,13 +61,13 @@ const TRANSLATIONS = {
     cellNumber: "رقم المربع",
     goToSquare: "اذهب إلى المربع",
     square: "مربع",
-    locationDefault: "العالم",
+    locationDefault: "فلسطين",
     noDescription: "لا يوجد وصف لهذا المربع بعد.",
     addedDate: "تاريخ الإضافة:",
     reserveSquare: "حجز مربع",
     uploadTitle: "ارفع صورتك واحجز مكانك",
     name: "الاسم",
-    city: "المدينة / الدولة",
+    city: "المدينة",
     description: "وصف قصير",
     email: "البريد الإلكتروني للدفع",
     phone: "رقم الهاتف",
@@ -84,11 +84,11 @@ const TRANSLATIONS = {
   },
   en: {
     languageButton: "عربي",
-    brandTitle: "One Million Squares",
-    brandSubtitle: "Each square has an owner, a photo, a story, and a permanent place on the board.",
-    millionSquares: "One million squares",
+    brandTitle: "One Million Palestinian Squares",
+    brandSubtitle: "Each square has an owner, a photo, a story, and a permanent place on the Palestinian board.",
+    millionSquares: "One million Palestinian squares",
     counterLabel: "Squares approved out of one million",
-    counterText: "Every approved square adds a new story to the board.",
+    counterText: "Every approved square adds a new name to the Palestinian board.",
     priceLabel: "Square price",
     reserveForPrice: () => "Reserve your square for " + getPriceText("en"),
     reserveShort: "Reserve",
@@ -114,13 +114,13 @@ const TRANSLATIONS = {
     cellNumber: "Square number",
     goToSquare: "Go to square",
     square: "Square",
-    locationDefault: "Worldwide",
+    locationDefault: "Palestine",
     noDescription: "No description has been added to this square yet.",
     addedDate: "Added on:",
     reserveSquare: "Reserve square",
     uploadTitle: "Upload your photo and reserve your place",
     name: "Name",
-    city: "City / Country",
+    city: "City",
     description: "Short description",
     email: "Payment email",
     phone: "Phone number",
@@ -1520,7 +1520,7 @@ function AdminPage() {
             <input
               value={manualCell.city}
               onChange={(e) => updateManualCell("city", e.target.value)}
-              placeholder="مثلاً London أو Nablus"
+              placeholder="مثلاً نابلس أو القدس"
               disabled={isManualSaving}
             />
           </label>
